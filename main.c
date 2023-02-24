@@ -22,11 +22,11 @@ size_t BadHashFunc(const void* e, size_t n) {
 #define STRING  3
 
 /* define type of data in Hash Table*/
-#ifndef TYPEOFLIST
- #define TYPEOFLIST  (STRING)
+#ifndef TYPEOFHASHTABLE
+ #define TYPEOFHASHTABLE  (STRING)
 #endif
 
-#if TYPEOFLIST == INTEGER
+#if TYPEOFHASHTABLE == INTEGER
 
 void loop() {
     printf("Type: integer\n");
@@ -67,7 +67,7 @@ void loop() {
     HashTableDestroy(&t);
 }
 
-#elif TYPEOFLIST == DOUBLE
+#elif TYPEOFHASHTABLE == DOUBLE
 
 
 void loop() {
@@ -110,7 +110,7 @@ void loop() {
     HashTableDestroy(&t);
 }
 
-#elif TYPEOFLIST == STRING
+#elif TYPEOFHASHTABLE == STRING
 
 char* readString(FILE* fp){
     char* str;
@@ -186,7 +186,7 @@ void loop() {
 }
 
 #else
- #error "Unexpected value of TYPEOFLIST."
+ #error "Unexpected value of TYPEOFHASHTABLE."
 #endif
 
 int main() {
