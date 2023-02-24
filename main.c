@@ -23,12 +23,13 @@ size_t BadHashFunc(const void* e, size_t n) {
 
 /* define type of data in Hash Table*/
 #ifndef TYPEOFLIST
- #define TYPEOFLIST  (DOUBLE)
+ #define TYPEOFLIST  (STRING)
 #endif
 
 #if TYPEOFLIST == INTEGER
 
 void loop() {
+    printf("Type: integer\n");
     hashTable t = HashTableCreate(13, Int, DEFAULTHASHFUNC);
     int q;
     int x;
@@ -70,6 +71,7 @@ void loop() {
 
 
 void loop() {
+    printf("Type: double\n");
     /* set custom Hash function*/
     hashTable t = HashTableCreate(3, Double, BadHashFunc);
     int q;
@@ -136,6 +138,7 @@ char* readString(FILE* fp){
 }
 
 void loop() {
+    printf("Type: string\n");
     hashTable t = HashTableCreate(3, String, DEFAULTHASHFUNC);
     int q;
     char* x;
